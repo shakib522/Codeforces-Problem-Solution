@@ -1,0 +1,56 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define dd double
+#define pb push_back
+#define mp make_pair
+#define f first
+#define s second
+#define pr printf
+#define sc scanf
+const int mod = 1e9 + 7;
+#define fast ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+ 
+void solve() {
+	ll r, g, b, w, even = 0, odd = 0, flag = 0;
+	cin >> r >> g >> b >> w;
+	if (r % 2 != 0) {
+		odd++;
+	}
+	if (g % 2 != 0) {
+		odd++;
+	}
+	if (b % 2 != 0) {
+		odd++;
+	}
+	if (w % 2 != 0) {
+		odd++;
+	}
+ 
+	if (odd <= 1) {
+		flag = 1;
+	} else {
+		r--;
+		g--;
+		b--;
+		w += 3;
+		if (r % 2 + g % 2 + b % 2 + w % 2 <=1&& r >= 0 && g >= 0 && b >= 0) {
+			flag = 1;
+		}
+	}
+ 
+	if (flag) {
+		cout << "YES" << endl;
+	} else {
+		cout << "NO" << endl;
+	}
+}
+int main()
+{
+	int testcase;
+	cin >> testcase;
+	while (testcase--) {
+		solve();
+	}
+	return 0;
+}
